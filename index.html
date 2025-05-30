@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <title>Gambar dari GitHub</title>
@@ -7,56 +7,44 @@
     body {
       margin: 0;
       padding: 0;
-      background-image: url('always.jpg'); /* ganti dengan nama file gambar kamu */
+      background-image: url('always.jpg'); /* ganti dengan gambar background kamu */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       height: 100vh;
     }
+
+    .produk {
+      text-align: center;
+      padding: 20px;
+      color: white;
+    }
+
+    .gambar-produk {
+      width: 100px; /* ukuran gambar bisa diubah, misal 150px, 100px */
+      height: auto;
+    }
+
+    .nama-produk {
+      font-size: 24px;
+      margin-top: 10px;
+      color: white;
+      text-shadow: -1px -1px 0 black;
+    }
+
+    .deskripsi-produk {
+      font-size: 16px;
+      color: white;
+    }
   </style>
 </head>
 <body>
+
   <div class="produk">
     <img src="ditzz.png" class="ditzz.png">
     <h1 class="nama-produk">Partner Panel Bot</h1>
-    <p class="deskripsi-produk">Keuntungan Dll Chat Nomer Di Bawah ⬇️</p>
+    <p class="deskripsi-produk">Keuntungan Dll Chat Nomer Di Bawah 📩</p>
   </div>
+
 </body>
-
-<style>
-  .produk {
-    text-align: center;
-    padding: 20px;
-    color: white;
-  }
-
-  .gambar-produk {
-  width: 35px !important;
-  height: auto !important;
-  }
-
-  .nama-produk {
-  font-size: 24px;
-  margin-top: 10px;
-  color: white; /* warna isi teks */
-  text-shadow:
-    -1px -1px 0 black,
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black; /* stroke hitam */
-  }
-
-  .deskripsi-produk {
-  font-size: 20px;
-  color: white; /* warna isi teks */
-  text-shadow:
-    -1px -1px 0 black,
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black; /* stroke hitam */
-  margin-top: 5px;
-  max-width: 300px;
-  margin-left: auto;
-  margin-right: auto;
-}
-    </style>
+</html>
