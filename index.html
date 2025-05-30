@@ -68,19 +68,56 @@
       <img src="ditzzzzzzz.png" class="gambar-produk">
       <p class="harga-produk">Harga Panel Pterodactyl : Rp 2.000/2K</p>
     </div>
-    <h2 style="text-align:center; color:white;">Pilih Produk</h2>
-<form action="https://wa.me/6288274258885" method="get" target="_blank">
-  <select name="text" required style="width: 90%; padding: 10px; border-radius: 10px; font-size: 18px;">
+    <h2 style="text-align:center; color:white;">Checkout</h2>
+
+<form onsubmit="return kirimPesan()" enctype="multipart/form-data" style="text-align: center;">
+  <label style="color:white;">Pilih Produk</label><br>
+  <select id="produk" required style="width: 90%; padding: 10px; margin:10px;">
     <option value="">-- Pilih Produk --</option>
-    <option value="Saya ingin beli Partner Panel Bot - Rp 20.000/20K">Partner Panel Bot - Rp 20.000/20K</option>
-    <option value="Saya ingin beli Admin Panel Bot - Rp 15.000/15K">Admin Panel Bot - Rp 15.000/15K</option>
-    <option value="Saya ingin beli Reseller Panel Bot - Rp 5.000/5K">Reseller Panel Bot - Rp 5.000/5K</option>
-    <option value="Saya ingin beli Sewa Bot Push Kontak - Rp 2.000/2K">Sewa Bot Push Kontak - Rp 2.000/2K</option>
-    <option value="Saya ingin beli Panel Pterodactyl - Rp 2.000/2K">Panel Pterodactyl - Rp 2.000/2K</option>
-  </select>
-  <br><br>
-  <center><button type="submit" style="padding: 10px 30px; font-size: 18px; border-radius: 10px;">Beli Sekarang</button></center>
+    <option value="Partner Panel Bot - Rp 20.000/20K">Partner Panel Bot - Rp 20.000/20K</option>
+    <option value="Admin Panel Bot - Rp 15.000/15K">Admin Panel Bot - Rp 15.000/15K</option>
+    <option value="Reseller Panel Bot - Rp 5.000/5K">Reseller Panel Bot - Rp 5.000/5K</option>
+    <option value="Sewa Bot Push Kontak - Rp 2.000/2K">Sewa Bot Push Kontak - Rp 2.000/2K</option>
+    <option value="Panel Pterodactyl - Rp 2.000/2K">Panel Pterodactyl - Rp 2.000/2K</option>
+  </select><br>
+
+  <label style="color:white;">Nama Pembeli</label><br>
+  <input type="text" id="nama" placeholder="Nama kamu" required style="width: 90%; padding: 10px; margin:10px;"><br>
+
+  <label style="color:white;">Upload Bukti Transfer</label><br>
+  <input type="file" id="bukti" required style="margin:10px;"><br>
+
+  <button type="button" onclick="salinDana()" style="background-color:#007bff; color:white; padding:10px; margin:5px;">Salin Nomor Dana</button>
+  <button type="button" onclick="window.open('https://example.com/qris.png')" style="background-color:#ffc107; color:black; padding:10px; margin:5px;">Minta QR ke Owner</button><br><br>
+
+  <button type="submit" style="background-color:green; color:white; padding:10px 30px;">Kirim Order</button>
 </form>
-  </div>
-</body>
-</html>
+
+<script>
+function kirimPesan() {
+  const produk = document.getElementById("produk").value;
+  const nama = document.getElementById("nama").value;
+
+  if (!produk || !nama) {
+    alert("Harap isi semua data terlebih dahulu.");
+    return false;
+  }
+
+  const pesan = `Halo Ditzz4you, saya ingin memesan:\n\nProduk: ${produk}\nNama: ${nama}\n\nSaya sudah transfer dan upload bukti.`;
+
+  // Ganti dengan nomor WhatsApp kamu
+  const nomorWA = "6288274258885";
+
+  const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+  window.open(url, '_blank');
+
+  return false;
+}
+
+function salinDana() {
+  const dana = "085609018981"; // Ganti dengan nomor Dana kamu
+  navigator.clipboard.writeText(dana).then(() => {
+    alert("Nomor Dana berhasil disalin!");
+  });
+}
+</script>
